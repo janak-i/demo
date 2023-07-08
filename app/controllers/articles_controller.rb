@@ -22,12 +22,10 @@ class ArticlesController < ApplicationController
   end
 
   def edit
-    byebug
     @article = Article.find(params[:id])
   end
 
   def update
-    byebug
     @article = Article.find(params[:id])
     if @article.update(article_params)
       redirect_to @article
@@ -37,7 +35,6 @@ class ArticlesController < ApplicationController
   end
 
   def destroy
-    byebug
     @article = Article.find(params[:id])
     @article.destroy
     redirect_to root_path, status: :see_other
